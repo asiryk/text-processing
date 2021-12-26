@@ -5,7 +5,7 @@ use regex::Regex;
 use std::fs::read_to_string;
 
 lazy_static! {
-    static ref WHITESPACE: Regex = Regex::new(r"[ \n\r\t]+").unwrap(); // find all whitespaces
+    static ref WHITESPACE: Regex = Regex::new(r"\s+").unwrap(); // find all whitespaces
 }
 
 const FILE_PATH: &str = "assets/beyond-good-and-evil.txt";
@@ -19,6 +19,8 @@ fn main() {
 fn normalize(text: &mut String) -> String {
     WHITESPACE.replace_all(text, " ").to_lowercase()
 }
+
+// fn extract_sentences_with_regex() -> String }
 
 #[cfg(test)]
 mod tests {
