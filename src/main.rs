@@ -7,7 +7,7 @@ use std::fs::read_to_string;
 lazy_static! {
     static ref WHITESPACE: Regex = Regex::new(r"\s+").unwrap();
 
-    // Match all sentences containing the word with "Philos"
+    // Match all sentences containing the word with "philos"
     static ref SENTENCE_WITH_WORD: Regex = Regex::new(r"[^\.?!]*\bphilos[^\.?!]*[\.?!]").unwrap();
 }
 
